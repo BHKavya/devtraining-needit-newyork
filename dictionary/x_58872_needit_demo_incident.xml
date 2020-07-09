@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Demo Incident" max_length="40" name="x_58872_needit_demo_incident" type="collection">
+        <element label="caller" mandatory="true" max_length="32" name="caller" reference="sys_user" type="reference"/>
+        <element label="Configuration item" max_length="40" name="configuration_item" type="string"/>
+        <element choice="1" label="Contact Type" max_length="40" name="contact_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Self service" sequence="0" value="self service"/>
+                <element inactive_on_update="false" label="Phone call" sequence="1" value="phone call"/>
+                <element inactive_on_update="false" label="Choice 3" sequence="2" value="Choice 3"/>
+            </choice>
+        </element>
+        <element label="Description" max_length="200" name="description" type="string"/>
+        <element choice="1" label="Incident state" mandatory="true" max_length="40" name="incident_state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="0" value="open"/>
+                <element inactive_on_update="false" label="Closed" sequence="1" value="closed"/>
+                <element inactive_on_update="false" label="Resolved" sequence="2" value="resolved"/>
+                <element inactive_on_update="false" label="Assigned" sequence="3" value="assigned"/>
+            </choice>
+        </element>
+        <element label="Number" max_length="6" name="number" type="string"/>
+        <element choice="1" label="Priority" mandatory="true" max_length="40" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="P1" sequence="0" value="p1"/>
+                <element inactive_on_update="false" label="P2" sequence="1" value="p2"/>
+                <element inactive_on_update="false" label="P3" sequence="2" value="p3"/>
+            </choice>
+        </element>
+        <element label="Short description" max_length="100" name="short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Category" max_length="40" name="u_category" type="string">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Sub Category" max_length="40" name="u_sbu_category" type="string">
+            <choice/>
+        </element>
+        <index name="index">
+            <element name="caller"/>
+        </index>
+    </element>
+</database>
